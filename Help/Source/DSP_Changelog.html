@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<LINK rel="StyleSheet" href="DSPHelp.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000"> 
+<table border="0" width="538"><tr><td>
+<p class="pm" style="text-align:justify;">
+<b>Version 1.0.3</b>
+<ul type="disc"> 
+<li>updated Multiple Instances Code. The Filter will now check downstream for a previous Instance</li>
+<li>added dspCompressor improvements by Jason Huang</li>
+<li>redesigned the Property Page</li>
+<li>fixed BallonHint Bug</li>
+<li>replaced RecyclerMM with FastMM</li>
+<li>fixed Synchronization Bugs in Filter List</li>
+</ul>
+
+<b>Version 1.0.2</b>
+<ul type="disc"> 
+<li>bugfixed Memory Leak in the DSPack Audio Filter</li>
+<li>updated Move/FastCode Library</li>
+<li>improved Parametric EQ</li>
+<li>added SSE3/AMD64 CPU Detection</li>
+<li>updated to DSPack CVS BaseClass</li>
+<li>added Visual Support with Crossfading Renderer</li>
+<li>added Option to disable Visual Buffering on the DirectShow Filter</li>
+<li>bugfixed SP2/DES on P4</li>
+</ul>
+
+<b>Version 1.0.1</b>
+<ul type="disc"> 
+<li>Bugfixed Samples (changed Moves to FastMove)</li>
+</ul>
+
+<b>Version 1.00 Final</b>
+<ul type="disc"> 
+<li>fixed TrayIcon PropertyPage "Can't create Window Device Context" Bug</li>
+<li>Parametric EQ Bugfixes</li>
+<li>added yet another StreamSwitching workaround for AC3Filter 1.01RC5</li>
+<li>added option to add the Graph to the Running Object Table</li>
+<li>seperator bugfix in Popupmenü</li>
+<li>added DirectShow Filterlist to PopupMenü</li>
+<li>fixed a crash with Languagesnames > 127 Char</li>
+<li>updated recyclerMM to v1.2</li>
+<li>added Balloonhint to Trayicon. Informs about multiple Streams</li>
+<li>bugfixed Bitrate conversion on 32Bit integer Streams</li>
+</ul>
+
+<b>Version 1.00 RC3</b>
+<ul type="disc"> 
+<li>changed the design of the TrackBars a bit</li>
+<li>added DSP Parametric EQ Filter</li>
+<li>changed the Streamswitching Code again...</li>
+<li>added back the Trayicon (disabled as default)</li>
+<li>bugfixed wrong connections on the Output Pin (was able to connect to SubPicture Pins before)</li>
+<li>Filter can now connect to MEDIASUBTYPE_DOLBY_AC3_SPDIF, but bypasses these Streams</li>
+<li>updated MoveLibrary</li>
+<li>fixed a SPDIF bypass Bug in the Callback</li>
+</ul>
+
+<b>Version 1.00 RC2</b>
+<ul type="disc"> 
+<li>bugfixed Ogg Splitter Names</li>
+<li>fixed a crash with MPC and it´s internal Audiofilter</li>
+<li>bugfixed some ASSERT Exceptions when seeking</li>
+</ul>
+
+<b>Version 1.00 RC1</b>
+<ul type="disc"> 
+<li>added Language detection for Morgans AVI Tags</li>
+<li>bugfixed Stream Switching</li>
+<li>bugfixed MKV default Track selection</li>
+<li>bugfixed MediaType in IAMStreamSelect.Info()</li>
+<li>added a new Help File for the DirectShow Filter</li>
+<li>Stream Switching can now force a Pin reconnection and the non used Filters to Stop</li>
+<li>added ability to Control DC-DSP Filter through Interfaces from other programming Languages</li>
+<li>fixed an issue with OGG Naming in Stream Switching</li>
+<li>added RecyclerMM as MemoryManager Replacement</li>
+<li>fixed an issue with wrong Winamp Paths</li>
+<li>added SoundForge compatibility</li>
+<li>added Small Description to the DShow Filter</li>
+<li>added Bitrate Conversion to DC-DSP Filter</li>
+<li>added TDCBitrateConverter Filter</li>
+<li>reduced the Buffersize on the DShow Filters</li>
+</ul>
+
+<br>
+<b>Version 1.00 Beta6</b>
+<ul type="disc">
+<li>Added TrackName Export on IAMStreamSelect with Matroska Streams (Title Tag)</li>
+<li>Bugfixed String comparison with ISO-639-2 Language Conversion</li>
+<li>PitchScale Bugfixed and improved</li>
+<li>fixed 8 Bit processing Bug</li>
+<li>fixed Equalizer Bug</li>
+<li>fixed another Bug with dmoDistortion when retrieving Values</li>
+<li>improved dspPitchScale Code. Uses now a Windowing Table instead of calculating it all the Time</li>
+<li>included CPU measauring to the Visual Buffering in the DirectShow Filter</li>
+<li>Added Stream Switching through IAMStreamSelect with support for different Mediatypes and OGG/Matroska Language Detection. (disabled as default)</li>
+<li>The DirectShow Filter can be limited to only one Instance per Graph. This is enabled as default and can be disabled on the Proprety Page</li>
+<li>The DirectShow Filter won´t connect to the MMSwitch Input Pin anymore. It sux to have a lot of instances of the filter. Right now, the Filter connects after the Switcher only</li>
+<li>Fixed an Winamp Directory Issue on the Property Pages</li>
+<li>fixed a Bug with DTS/AC3 bypass</li>
+<li>replaced DoubleClick with SingleClick in the DSP Selection Property Page</li>
+<li>Fixed a crash with Winamp Plugin when the Filter is created Threaded. Now Zoomplayer and Radlight shouldn´t crash anymore</li>
+<li>Fixed a major Bug in the FFT Code that could cause distortion on some systems</li>
+<li>Fixed some graphic glitches on the Property Page</li>
+<li>The Equalizer allocates now only memory for needed Channels</li>
+<li>Added CPU Usage Dialog to the DirectShow Filter. It shows the DSP,DMO and Winamp DSP CPU Usage</li>
+<li>Improved the FFT Code for Athlon-XP CPUs (SSE capable CPUs)</li>
+<li>DirectShow filter has now a Dynamic Filter List which allows adding only (and as much as) Filters that are needed</li>
+<li>DirectShow Filter supports now the DX9 DMO Audio Effects</li>
+<li>replaced the Winamp Visual Timer in the DrectShow Filter with a Threaded Version. Caused RadLight4 (A6) to crash with the VCL TTimer</li>
+<li>Added a new Treble Enhancer DSP Filter to the Component Pack</li>
+<li>Filters and DSP Components uses now SSE/MMX Optimized MemMoves through MoveLibrary (C)FastCode Project</li>
+<li>Added Quality and FFTSize to the PitchScale Propertypage of th eDirectShow Filter</li>
+<li>Updated the NSIS Installer Script</li>
+<li>Fixed a Bug on the Phaser PropertyPAge which caused the Values to Reset</li>
+<li>DirectShow Filter is now seperate from the DSPack Filter</li>
+<li>Removed "Disable optimized FFT" from DirectShow Filter, since it´s working stable on all CPUs</li>
+<li>Filters are now TransInPlace again. This fixes some issues wth connecting 3rd party Filters</li>
+<li>DirectShow Filter contains now only one Class with "MERIT_PREFERED +2" Merit. Normal Version has been removed</li>
+<li>Equalizer has now a much better Quality and Bandwidth (2048 Point FFT)</li>
+<li>Every DSP Filter has it´s own Component</li>
+<li>Added DMO Wrappers and a bunch of new Filters to the Delphi Tab</li>
+<li>Winamp2 Visual and DSP Plugins has their own component</li>
+<li>Spectrum and Waveform Analyzer has their own component</li>
+<li>DirectShow  Filter uses now the DSP Component Classes</li>
+<li>DSPack Filter doesn´t need any external Filter (binary)</li>
+<li>Filter allows SPDIF and DTS connection, but no DSP/Visual Buffering is done (added this for Dynamic reconnect with AC3Filter and SPDIF)</li>
+<li>added an INF Installer for the Binary (thx to BlackTrip)</li>
+<li>DirectShow Filter Spectrum on the EQ Prop.Page uses now the Spectrum Class</li>
+<li>rewritten the Plugin API. Can be used within any Filter that exports a Callback for PCM Data (DSP Plugins) and implements the VisualInterface (VIS Plugins)</li>
+<li>Added Mediatype Compare on the Buffer Initialization to prevent unused Memory Allocations</li>
+<li>No Delphi 5 Support anymore. (there´s way too much Code that need to be converted)</li>
+<li>Added Audiostream delay through timestamp changing for DSPack and DirectShow Filter</li>
+<li>removed Echo/Delay Filter from DirectShow Filter. (Uses too much memory and changing the Delay with Timestamps works better)</li>
+<li>Added AttackDB and Release Time to Dynamic Amplify. Thus it´s possible to set the Amplification more precise</li>
+<li>Registry Settings for the DirectShow Filter are stored now in HKEY_CURRENT_USER</li>
+</ul>
+
+<br>
+<b>Version 0.92</b></li>
+<ul type="disc">
+<li>The Filter supports now 24 and 32 Bit integer</li>
+<li>Buffer Overflow crash with large Buffersizes (like WaveParser) on the Tempo Filter has been fixed</li>
+<li>Updated to DSPack 2.31 Classes</li>
+<li>A couple of Bugs that flushed Filters when reading Filter settings has been Fixed</li>
+<li>Bugfixed and updated the Sample Plugin API</li>
+<li>improved again the Visual Buffering. Works now with Media Timestamps</li>
+<li>The Pre Amplify Range has been extended. Now it´s possible to Set Maximum Range of the Trackbar</li>
+<li>Added a new Phaser Filter</li>
+</ul>
+
+<br>
+<b>Version 0.91</b></li>
+<ul type="disc">
+<li>The Quality of the PitchScale Filter is now a Bit better (just increased FFTSize to 4096), but there´s still this phasing sound :/</li>
+<li>The Pre Amplify, Equalizer, Phase Invert, True Bass, Low Pass and High Pass Filters has been extended to do the DSP seperate on each Channel</li>
+<li>The TrayIcon has been removed, since it´s much more complicated now (because of the seperate DSP) to Control the Filter through the TrayIcon. Also WMP9 doesn´t seem to like it</li>
+<li>DSP Memory is now aligned on a 16Byte boundary for faster performing with SSE Instructions</li>
+<li>Bitmap Alpha Blend, which is used on the EQ Property Page is now MMX Optimized</li>
+<li>3D Sound has been SSE/3Dnow optimized</li>
+<li>Added a Tempo Filter that allows faster playing without changing Pitch. This Filter causes unsync between Video and Audio !</li>
+<li>Multiple Echos can now be disabled. This saves a lot of Memory</li>
+</ul>
+
+<br>
+<b>Version 0.9</b></li>
+<ul type="disc">
+<li>Fixed a Bug which caused the Delay Filter to Flush when accessing the PropertyPage more then one times</li>
+<li>Fixed a Bug on the Winamp Property Page which caused the config Dialog not to show when the PopertyPage has been closed and opened again</li>
+<li>improved Dynamic Amplify (seems to do his job very well ...)</li>
+<li>A Bug in Pitch Shift has been fixed, which caused an Buffer Overflow when Pitch has been set to a Value < 10</li>
+<li>The FFT has been built into the Filter, thus no extra dll is needed anymore</li>
+<li>FFT is optimized for FPU, 3DNow, 3DNowExt and SSE capable CPUs</li>
+<li>The Filter supports now 32Bit IEEE Float Data</li>
+<li>Fixed some Autoloading Bugs</li>
+<li>Added True Bass Filter</li>
+<li>Added Pitch Scale Filter</li>
+<li>implemented Winamp Visual Plugins</li>
+<li>changed the Filter Order because of an Issue with Pitch Shift and Equalizer</li>
+<li>Added multiple Echos</li>
+<li>fixed some Visual issues</li>
+<li>The Filter Order can now be changed</li>
+<li>Registered the Project at CoreCodec. Can now be found at <a href="http://dcdspfilter.corecodec.org/" target="_blank">dcdspfilter.corecodec.org</a></li>
+<li>Bugfixes to LowPass/HighPass</li>
+<li>BugFixes to the PopupMenu</li>
+<li>BugFixes to the CPU detection</li>
+<li>The Channel Order can now be changed</li>
+<li>Fixed: PopupMenu can´t be closed</li>
+<li>Filter and Samples can compile again under Delphi 5, but all the 3DNow and SSE Code won´t be included in the binary</li>
+<li>Fixed annoying "clicks" in Dynamic Amplification when reducing Amplification</li>
+<li>The binary is packed with <a href="http://upx.sf.net" target="_blank">UPX</a> to reduce the Filesize. On my Tests on Win98/2000 it worked very well</li>
+<li>Fixed some issues with Winamp DSP Plugins</li>
+<li>Fixed closing issue with Winamp Visual Plugins</li>
+<li>Fixed crashes on close with WMP9</li>
+</ul>
+
+<br>
+<b>Version 0.8</b></li>
+<ul type="disc">
+<li>New djbfft.dll compiled with Intel v7 Compiler with SSE/SSE2 optimizations (works much faster then the previous FFT). Also the msvcr70.dll is not needed anymore</li>
+<li>Added Pitch Shift Filter</li>
+<li>Added PhaseInvert Filter</li>
+<li>Added experimental Dynamic Amplification (not really working yet)</li>
+<li>Added Echo/Delay Filter (only 1 Delay atm)</li>
+<li>Added LowPass/HighPass Filter</li>
+<li>Winamp DSP Plugins which changes the Buffersize (like Pitch) works now</li>
+<li>The Visualstuff has been completely rewritten. Less CPU usage. Should work with every Parser/Decoder</li>
+<li>Added a component to the DSPack Tab of Delphi</li>
+<li>Added a couple of EQ Presets (you need to push the Reset Button on the Property Page if you have (had) an older version running to get this to work)</li>
+<li>The Popupmenu has been extended to control most of the Settings</li>
+<li>The Interface has also been totally rewritten and an Callback Intf. is added too. (To send PCM Data to any Application)</li>
+</ul>
+
+<br>
+<b>Version 0.7</b></li>
+<ul type="disc">
+<li>Vis is now in Sync with Audio</li>
+<li>Rewritten the Autoloading Stuff (uses now only one FilterClass)</li>
+</ul>
+
+<br>
+<b>Version 0.6</b></li>
+<ul type="disc">
+<li>added a C Compiled fft DLL which works much faster than the Delphi Code FFT</li>
+<li>fixed "Not Freeing Filter when PropertyPage is called"</li>
+<li>fixed strange Filternames</li>
+<li>ReEnabled Vis on the Autoloading Version (switched back to old unsync Code,because doing Vis in sync with Audio needs some ReThinking and coding)</li>
+</ul>
+
+<br>
+<b>Version 0.5b</b></li>
+<ul type="disc">
+<li>renamed the Filter to DC-DSP Filter</li>
+<li>deleted unused Stuff like LowPass,HighPass ..</li>
+<li>Equalizer is now fully working for 8 and 16Bits and any Number of Channels</li>
+<li>PreAmplify works also on 8 and 16Bit Samples and any Number of Channels</li>
+<li>Added Property Pages to Control the Filter</li>
+<li>Rewritten (again) the Interface</li>
+<li>Rewritten the Sample App to show only the Visualasations</li>
+<li>Added TrayIcon to control the Filter "on the Fly" (can be disabled from the PropertyPage)</li>
+<li>Added an Autoloading Version of the Filter (can also be disabled from the PropertyPage)</li>
+<li>Added configure Export to access the PropertyPage without loading the Filter (just run configure.bat/Filter needs to be registered)</li>
+<li>Added Nullsoft Installer Script (v2.0b0)</li>
+</ul>
+
+<br>
+<b>Version 0.4</b></li>
+<ul type="disc">
+<li>rewritten as DirectShow Filter (uses now InPlace Processing)</li>
+</ul>
+
+<br>
+<b>Version 0.3</b></li>
+<ul type="disc">
+<li>Added Winamp DSP Plugin Support</li>
+<li>Rewritten the Interface</li>
+</ul>
+
+<br>
+<b>Version 0.2</b></li>
+<ul type="disc">
+<li>Fixed Bug with Vorbis Decoder</li>
+<li>hopefully fixed larger Buffersize then MaxBufferSize on ProcessOutput</li>
+</ul>
+
+<br>
+<b>Version 0.1</b></li>
+<ul type="disc">
+<li>First Public Release. Written as DMO Filter</li>
+</ul>
+</p>
+</td></tr></table>
+
+</HTML>

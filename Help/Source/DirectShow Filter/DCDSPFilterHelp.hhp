@@ -1,0 +1,15 @@
+[OPTIONS]
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=..\..\DCDSPFilterHelp.chm
+Contents file=DCDSPFilterHelp.hhc
+Default topic=about.htm
+Display compile progress=Yes
+Full-text search=Yes
+Index file=DCDSPFilterHelp.hhk
+Language=0x407 German (Germany)
+Title=DC-DSP Filter v1.0.3
+
+
+[INFOTYPES]
+

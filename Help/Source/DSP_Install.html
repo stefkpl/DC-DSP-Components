@@ -1,0 +1,82 @@
+<html>
+<head>
+<LINK rel="StyleSheet" href="DSPHelp.css">
+</head>
+<body>
+IMPORTANT: If you already have an older Version installed, uninstall it first and <br>
+remove all of the DC-DSP Components related .bpl and .dcp files from your <br>
+"Delphi7\PRojects\Source\" directory. Otherwise you might Crash Delphi.<br>
+<ol>
+<li>
+As first you need to add a few Directorys to your Searchpath in Delphi.<br>
+These are:<br><br>
+<i>
+\dcdspfilter\DSP Components<br>
+\dcdspfilter\DSPack Filter<br>
+\dcdspfilter\MoveLibrary<br>
+\dcdspfilter\Plugin API\API
+</i>
+</li><br><br>
+<li>
+Now you must execute the Package Installers.<br>
+Delphi will raise an exception about that it´s not able to find Resource Files.<br>
+Ignore them, because Delphi will recreate them anyway.<br><br>
+
+<b>For Delphi 6 use:</b><br>
+As first open<br>
+<i>\dcdspfilter\DSP Components\DCDSPComponents_D6.dpk</i><br>
+hit Compile and Install.<br><br>
+
+Now open<br>
+<i>\dcdspfilter\DSPack Filter\DSPackDCDSPFilter_D6.dpk</i><br>
+hit Compile and Install.<br><br>
+
+Now open<br>
+<i>\dcdspfilter\Plugin API\API\DCPluginRenderer_D6.dpk</i><br>
+hit Compile and Install.<br><br>
+
+<b>For Delphi 7 use:</b><br>
+As first open<br>
+<i>\dcdspfilter\DSP Components\DCDSPComponents_D7.dpk</i><br>
+hit Compile and Install.<br><br>
+
+Now open<br>
+<i>\dcdspfilter\DSPack Filter\DSPackDCDSPFilter_D7.dpk</i><br>
+hit Compile and Install.<br><br>
+
+Now open<br>
+<i>\dcdspfilter\Plugin API\API\DCPluginRenderer_D7.dpk</i><br>
+hit Compile and Install.
+</li><br><br>
+<li>
+Now you are ready to compile the Sample Applications.<br><br>
+
+<i>\dcdspfilter\Samples\DirectShow\</i><br>
+contains a Sample how to control the DC-DSP DirectShow Filter.<br><br>
+
+<i>\dcdspfilter\Samples\DSPack\</i><br>
+contains the Sample that uses the DSPack Filter Component and the DSP Components.<br><br>
+
+<i>\dcdspfilter\Samples\DSPack DVDPlay\</i><br>
+contains only a Sample how to add the DSPack Filter to a DVD Graph. <br><br>
+
+<i>\dcdspfilter\Plugin API\Samples\</i><br>
+contains Sample Applications and Plugins that shows how to implement DSP and Visual Plugins in any Application.<br>
+</li>
+</ol>
+<br><br>
+<b>  some last Informations ...</b><br>
+All the DSPack Samples won´t need to have DCDSPFilter.ax registered to your System, <br>
+while all DirectShow Samples need it. The Source of DCDSPFilter.ax is located in <br>
+<i>\dcdspfilter\DirectShow Filter\Source</i> After compiling it is placed in 
+<i>\dcdspfilter\DirectShow Filter\Binary</i><br>
+To register it run registar.bat. To unregister it run unregister.bat<br>
+<br><br>
+<b>Important !!!</b><br>
+It is important to add RecyclerMM.pas and FastMove.pas as first units to your project's .dpk file !!!<br>
+Otherwise your Application/DLL may crash with certain DSP's !!!<br>
+RecyclerMM is GPL'ed, so in case you´re using my Components within an commercial Application, <br>
+you´re not allowed to use RecyclerMM. In that case open dspUtils.pas and comment {$DEFINE USE_SSE}.<br>
+DON'T compile the Package with RecyclerMM. Delphi doesn't seem to like that.
+</body>
+</html>

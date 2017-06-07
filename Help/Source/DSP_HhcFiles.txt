@@ -1,0 +1,51 @@
+..\..\DSP Components\dmoBaseFilter.pas
+..\..\DSP Components\dmoChorus.pas
+..\..\DSP Components\dmoCompressor.pas
+..\..\DSP Components\dmoConst.pas
+..\..\DSP Components\dmoDistortion.pas
+..\..\DSP Components\dmoEcho.pas
+..\..\DSP Components\dmoFlanger.pas
+..\..\DSP Components\dmoGargle.pas
+..\..\DSP Components\dmoI3DL2Reverb.pas
+..\..\DSP Components\dmoParamEQ.pas
+..\..\DSP Components\dmoUtils.pas
+..\..\DSP Components\dmoWavesReverb.pas
+
+..\..\DSP Components\dspAmplify.pas
+..\..\DSP Components\dspBandpass.pas
+..\..\DSP Components\dspBitrateConverter.pas
+..\..\DSP Components\dspChannelOrder.pas
+..\..\DSP Components\dspCompressor.pas
+..\..\DSP Components\dspConst.pas
+..\..\DSP Components\dspDownMix.pas
+..\..\DSP Components\dspDynamicAmplify.pas
+..\..\DSP Components\dspEchoDelay.pas
+..\..\DSP Components\dspEqualizer.pas
+..\..\DSP Components\dspFastFourier.pas
+..\..\DSP Components\dspFlanger.pas
+..\..\DSP Components\dspHighpass.pas
+..\..\DSP Components\dspLowpass.pas
+..\..\DSP Components\dspNotch.pas
+..\..\DSP Components\dspParametricEQ.pas
+..\..\DSP Components\dspPhaseInvert.pas
+..\..\DSP Components\dspPhaser.pas
+..\..\DSP Components\dspPitchScale.pas
+..\..\DSP Components\dspPitchShift.pas
+..\..\DSP Components\dspReverse.pas
+..\..\DSP Components\dspSound3D.pas
+..\..\DSP Components\dspTempo.pas
+..\..\DSP Components\dspTrebleEnhancer.pas
+..\..\DSP Components\dspTrueBass.pas
+..\..\DSP Components\dspUtils.pas
+
+..\..\DSP Components\dspInterfaces.pas
+..\..\DSP Components\dmoInterfaces.pas
+
+..\..\DSP Components\visSpectrum.pas
+..\..\DSP Components\visWaveform.pas
+
+..\..\DSP Components\waConst.pas
+..\..\DSP Components\waDSPWrapper.pas
+..\..\DSP Components\waDSPThreadedWrapper.pas
+..\..\DSP Components\waUtils.pas
+..\..\DSP Components\waVisualWrapper.pas

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>DC-DSP Filter 1.0 : Filters</TITLE>
+<LINK rel="StyleSheet" href="DCDSPFilterHelp.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<img src="p4.png">
+<br><br>
+<table border="0" width="628"><tr><td>
+<p class="pm" style="text-align:justify;">
+The Options Tab. It contains everything else I implemented. "Show Visuals before DSP" <b style="color:#FF0000;">(1)</b> processes 
+the Spectrum Display before processing the DSP. Since most of the Streams are already at their maximum Peak, 
+it looks better to have it enabled. "Limit to one Instance per Graph" <b style="color:#FF0000;">(2)</b> makes sure the Filter won't be 
+loaded twice within one Graph. Since 1.0RC3, the Trayicon is back, but it´s disabled as default. In case you are running WMP9 you will need to run configure.exe and enable the Trayicon. Now, everytime the Filter is used, it will show an Icon in the Tray. If you do 
+a left MouseClick on it, it will popup the PropertyPage. "Enable Running Object Table" is for Debugging Filtergraph's, as it allows to connect Graphedit to the running Graph, what means even a WMP9 Graph can be traced. "Show Balloonhint when multiple Audiostreams present" means that there will appear a Window above the Trayicon telling what Languages are available. This works only if the Trayicon is visible.<br><br>
+The "Audio Stream Delay" <b style="color:#FF0000;">(3)</b> is done by moving the TimeStamps, thus the Renderer is able to synchronize 
+the Audio with the Video, withput any further CPU Usage like when using a Delay Filter. It works only in combination 
+with a Video Stream (pretty useless without a Video .. isn't it?). I´ve been asked to add the possibility to use 
+different Delays that depends on the Video position. eg: +2 sec. at the beginning and +5 sec. at the end. Unfortunatly 
+that doesn't seem to be possible, because the Filter isn't able to get the current position of the Graph. If i still try to do so, 
+(using IMediaSeeking) the Graph ends up with a deadlock. So, the only solution is that MediaPlayer Developers set 
+these Values on their own.<br><br>
+Stream Switching .. one of the hardest things to realize. It seems that MS wasn't aware of that in the future there 
+will be Movies with more then 1 Audiostream. Also the 2 most important Codec Developers CyberLink and Intervideo aren't 
+able to develop Codecs that works with multiple Streams :\ The Filter supports the ITrackInfo Interface, which is used 
+by the Matroska Splitter to retrieve Language Names. Also supported is Tobias' OGG Splitter, AVI strm Headers, Morgans AVI Tags and .mss 
+Files. For Matroska not only the Languages are shown, also the Track Names are displayed, but not within WMP9. WMP9 supports only 
+LCID's to show the Languages in its own way. Stream Switching is disabled as default. To enable it 
+check the Enabled <b style="color:#FF0000;">(4)</b> CheckBox. "Force Pin reconnect" reconnects the Output Pin when doing a Stream Switch. 
+This is actually just usefull when haveing DMO Filters (or other bugged filters) after the Filter that doesn't support a 
+dynamic Mediatype change. For WMP9 it <b>MUST</b> be enabled. Otherwise the Renderer won't recognize Frequency/BitRate 
+changes. "Disable when only one Stream present" if checked, will not expose the IAMStreamSelect Interface. Thus a Player 
+won't be able to get the Language when only one Language is available. "Force not used Filters to Stop" is again a workaround 
+for bugged Decoders. In that case AC3Filter 0.7b. Filters that are not active, are forced by the Filter to
+Stop Datadelivering. Thus i was able to get rid of that issue. In general, if you have Stream Switching Enabled, you should 
+also have "Force Pin reconnect" and "Force not used Filters to Stop" <b>Enabled</b>. Especially for WMP9 !!!. <br><br>
+The last one, Bitrate conversion <b style="color:#FF0000;">(5)</b>. I added it after a Request and it also become usefull for me ;) What it does is to convert every 
+Bitrate to the specified BitRate. "before DSP" means, when checked, it will do the conversion before processing the DSP/DMO 
+and Winamp Plugins. When disabled, the BitRate will be converted after the Buffers has been processed.
+</p>
+</td></tr></table>
+</HTML>

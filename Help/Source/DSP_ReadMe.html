@@ -1,0 +1,96 @@
+<html>
+<head>
+<LINK rel="StyleSheet" href="DSPHelp.css">
+</head>
+<body>
+
+DC-DSP Components is a Component Pack for Delphi 6/7 that is able to do various DSP Transformations on 8/16/24/32 Bit PCM integer and 32Bit PCM Float Buffers. Some Filters, like 3DSound and the FFT (which is used by the Equalizer, Spectrum Analyzer, ...) is optimized to use SSE/3DNow and extended 3DNow instructions.
+<br> <br>
+Included are also Wrapper components for all MS DMO Filters (available since DX8), Winamp2 Visual and DSP and two (easy to use) Spectrum and Waveform Analyzer Components. (Note that MS DMOs can only handle 2 Channels and 16Bit integer or 32 Bit Float Streams)
+<br> <br>
+<b>available Filters:</b>
+<dl>
+<dt><b>TDCDMOChorus</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Chorus Filter.</dd>
+
+<dt><b>TDCDMOCompressor</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Compressor Filter.</dd>
+<dt><b>TDCDMODistortion</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Distortion Filter.</dd>
+<dt><b>TDCDMOEcho</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Echo Filter.</dd>
+<dt><b>TDCDMOFlanger</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Flanger Filter.</dd>
+<dt><b>TDCDMOGargle</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Gargle Filter.</dd>
+<dt><b>TDCDMOI3DL2Reverb</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO I3DL2 Reverb Filter.</dd>
+<dt><b>TDCDMOParamEQ</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO Parametric Equalizer Filter.</dd>
+<dt><b>TDCDMOWavesReverb</b></dt>
+<dd>An easy to use Wrapper Component for Microsofts DMO WavesReverb Filter.</dd>
+<br><br>
+<dt><b>TDCAmplify</b></dt>
+<dd>Class to Amplify Audiodata. Amplification can be done seperate on each Channel. 32 Bit Float Data is tuned to use 3DNow/SSE instructions. When using a SSE capable CPU, make sure that Data is aligned on a 16 Byte boundary.</dd>
+<dt><b>TDCBandpass</b></dt>
+<dd>DSP Component to cutoff a certain Frequency Range. Each Channel can seperate cutoff the Frequency range.</dd>
+<dt><b>TDCBitrateconverter</b></dt>
+<dd>DSP Filter to convert from one BitRate to another.</dd>
+<dt><b>TDCChannelOrder</b></dt>
+<dd>Component to Swap Channels to any needed Position.</dd>
+<dt><b>TDCCompressor</b></dt>
+<dd>DSP Compressor Filter.</dd>
+<dt><b>TDCDownMix</b></dt>
+<dd>DSP Component to Mix every Channel together to one and then copy that Value to every Channel.</dd>
+<dt><b>TDCDynamicAmplify</b></dt>
+<dd>DSP Filter to automiticaly keep the Volum eat a specific maximum Value. If the Volume is silent for a specific Time, the Amplification is raised to a specific Value. If the current Amplification would break the Range of the Audiodata, the Amplification is faded out to the maximum possible Amplification.</dd>
+<dt><b>TDCEchoDelay</b></dt>
+<dd>DSP Echo/Delay Filter that supprts multiple Echos.</dd>
+<dt><b>TDCEqualizer</b></dt>
+<dd>Equalizer Component that can Equalize from 1 (2 Point FFT) up to 4096 Bands (8192 Point FFT). Each Channel can be equalized seperate.</dd>
+<dt><b>TDCFFT</b></dt>
+<dd>Fast Fourier Transform Component that can do Transformations up to a Size of 8192 Samples (<u>Power of 2 only!</u>). Optimized for SSE, 3DNow, 3DNowExt and CPUs that only supports FPU instructions. This Routine chooses automatically the fastest one.</dd>
+<dt><b>TDCFlanger</b></dt>
+<dd>Component to flange Audiodata. Every Channel can be seperate controlled.</dd>
+<dt><b>TDCHighpass</b></dt>
+<dd>DSP Component that cuts Frequencys from a specified Frequency to half of the Sampling Rate. Each Channel can be seperate Processed with different Cutoff Values.</dd>
+<dt><b>TDCLowpass</b></dt>
+<dd>DSP Component that cuts Frequencys from 0 to a specified Frequency. Each Channel can be seperate Processed with different Cutoff Values.</dd>
+<dt><b>TDCNotch</b></dt>
+<dd>DSP Component that cuts Frequencys in a Widerange of specified Frequency. Each Channel can be seperate Processed with different Cutoff Values.</dd>
+<dt><b>TDCPhaseInvert</b></dt>
+<dd>Phase Invert Component that inverts specific Channels.</dd>
+<dt><b>TDCPhaser</b></dt>
+<dd>Class for phasing Amplify Audiodata. Phasing can be done seperate on each Channel.</dd>
+<dt><b>TDCPitchScale</b></dt>
+<dd>Component to inc/decrease the Pitch of an Audio Buffer without changing the Tempo. The Buffersize isn´t affected, only the Pitch of the Voice is changed. Not that the Filter delays the Data for a couple of Samples.</dd>
+<dt><b>TDCPitchShift</b></dt>
+<dd>Pitch Shift Filter to increase Speed and Pitch of Audio Data.</dd>
+<dt><b>TDCReverse</b></dt>
+<dd>DSP Component to Reverse the content of an Audio Buffer. Each Channel can be reversed seperate.</dd>
+<dt><b>TDCSound3D</b></dt>
+<dd>3D Sound Amplification Component that works on 2 Channels only. The difference between Left and Right Channel is calculated and added to the main Signal. For 32Bit Float and SSE CPUs make sure the Buffer is aligned on 16byte.</dd>
+<dt><b>TDCTempo</b></dt>
+<dd>DSP Filter to increase or decrease the Tempo without changing the Pitch.</dd>
+<dt><b>TDCTrueBass</b></dt>
+<dd>DSP Component to Amplify Low Frequencys of Audio Data. The Frequencyrange can be adjusted.</dd>
+<br><br>
+<dt><b>TDCSpectrum</b></dt>
+<dd>Designed to retrieve some Values to do Visual drawing of a Spectrum. Output has always the same scaling on every Buffertype.</dd>
+<dt><b>TDCWaveform</b></dt>
+<dd>Designed to retrieve some Values to do Visual drawing of a Waveform. Output has always the same scaling on every Buffertype.</dd>
+<br><br>
+<dt><b>TDCWADSPWrapper</b></dt>
+<dd>Winamp2 DSP Plugin Wrapper Component.</dd>
+<dt><b>TDCWADSPThreadedWrapper</b></dt>
+<dd>Threaded Version of TDCWADSPWrapper.</dd>
+<dt><b>TDCWAVisualWrapper</b></dt>
+<dd>Winamp2 Visual Plugin Wrapper Component.</dd>
+</dl>
+<br>
+Generally the usage is pretty simple. Drop a Filter onto a TForm, call Filter.Init() to initialize it.<br>
+Now you are able to Process some Data using Filter.Process(). To Flush the internal Buffers of a Filter,<br>
+call Filter.Flush(). Note, not all Filters needs to be initialized or can be Flushed.
+
+</body>
+</html>
