@@ -1,0 +1,62 @@
+;
+; DC-DSP Filter Setup File Created by Coder@dsplayer.de
+; Home: http://www.dsplayer.de
+;
+; DC-DSP Filter Copyright 2002-2003 DCoder@dsp-worx.de
+; Home: http://dsp-worx.de/
+;
+
+[Version]
+Signature = "$CHICAGO$"
+;enable the windows driver logo test
+;Class = MEDIA
+
+[SourceDisksNames]
+1="DC-DSP Codec Install Disk",, 0001
+
+[SourceDisksFiles]
+DCDSPFilter.ax=1
+DCDSPFilter.inf=1
+
+[DefaultInstall]
+CopyFiles=DC.Copy,DC.Copy.Inf
+addreg = DC.DoReg
+MediaType = SOFTWARE
+
+[DefaultInstall.ntx86]
+CopyFiles=DC.Copy,DC.Copy.Inf
+addreg = DC.DoReg
+MediaType = SOFTWARE
+
+[Remove_DC]
+DelReg = DC.DelReg
+DelFiles = DC.Copy,DC.Copy.Inf
+
+[DefaultUninstall]
+delReg=DC.DelReg
+DelFiles=DC.Copy,DC.Copy.Inf
+
+[DC.Copy]
+DCDSPFilter.ax
+
+[DC.Copy.Inf]
+DCDSPFilter.inf
+
+[DC.DoReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\RunOnce\Setup,"Registering DC-DSP Direct Show Filter...",,"%11%\regsvr32.exe /s %11%\DCDSPFilter.ax"
+HKLM,%UnInstallPath%,DisplayName,,%UninstallDispName%
+HKLM,%UnInstallPath%,UninstallString,,"%11%\rundll32.exe setupapi,InstallHinfSection Remove_DC 132 %17%\%InfFile%"
+
+[DC.DelReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\RunOnce\Setup,"Unregistering DC-DSP Direct Show Filter...",,"%11%\regsvr32.exe /s /u %11%\DCDSPFilter.ax"
+HKLM,%UnInstallPath%
+
+[DestinationDirs]
+DefaultDestDir = 11	; LDID_SYS
+DC.Copy = 11
+DC.Copy.Inf = 17
+
+[Strings]
+InfFile="DCDSPFilter.inf"
+UninstallDispName="DC-DSP Filter"
+UnInstallPath="Software\Microsoft\Windows\CurrentVersion\Uninstall\DC-DSPFilter"
