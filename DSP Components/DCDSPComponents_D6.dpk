@@ -1,0 +1,83 @@
+package DCDSPComponents_D6;
+
+{$R 'dspRegister.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS OFF}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DC-DSP Components v1.0'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  DirectX9_D6;
+
+contains
+  dmoConst in 'dmoConst.pas',
+  dmoUtils in 'dmoUtils.pas',
+  dmoWavesReverb in 'dmoWavesReverb.pas',
+  dmoParamEQ in 'dmoParamEQ.pas',
+  dmoI3DL2Reverb in 'dmoI3DL2Reverb.pas',
+  dmoGargle in 'dmoGargle.pas',
+  dmoFlanger in 'dmoFlanger.pas',
+  dmoEcho in 'dmoEcho.pas',
+  dmoDistortion in 'dmoDistortion.pas',
+  dmoCompressor in 'dmoCompressor.pas',
+  dmoChorus in 'dmoChorus.pas',
+  dspRegister in 'dspRegister.pas',
+  dspAmplify in 'dspAmplify.pas',
+  dspBitrateConverter in 'dspBitrateConverter.pas',
+  dspBandpass in 'dspBandpass.pas',
+  dspConst in 'dspConst.pas',
+  dspDownMix in 'dspDownMix.pas',
+  dspEchoDelay in 'dspEchoDelay.pas',
+  dspEqualizer in 'dspEqualizer.pas',
+  dspFastFourier in 'dspFastFourier.pas',
+  dspHighpass in 'dspHighpass.pas',
+  dspLowpass in 'dspLowpass.pas',
+  dspPhaseInvert in 'dspPhaseInvert.pas',
+  dspPitchScale in 'dspPitchScale.pas',
+  dspPitchShift in 'dspPitchShift.pas',
+  dspSound3D in 'dspSound3D.pas',
+  dspTempo in 'dspTempo.pas',
+  dspTrueBass in 'dspTrueBass.pas',
+  dspUtils in 'dspUtils.pas',
+  dspNotch in 'dspNotch.pas',
+  visSpectrum in 'visSpectrum.pas',
+  visWaveform in 'visWaveform.pas',
+  dspReverse in 'dspReverse.pas',
+  dspPhaser in 'dspPhaser.pas',
+  dspChannelOrder in 'dspChannelOrder.pas',
+  dspFlanger in 'dspFlanger.pas',
+  dspCompressor in 'dspCompressor.pas',
+  dspDynamicAmplify in 'dspDynamicAmplify.pas',
+  waConst in 'waConst.pas',
+  waDSPWrapper in 'waDSPWrapper.pas',
+  waUtils in 'waUtils.pas',
+  waVisualWrapper in 'waVisualWrapper.pas',
+  dspTrebleEnhancer in 'dspTrebleEnhancer.pas',
+  waDSPThreadedWrapper in 'waDSPThreadedWrapper.pas',
+  dmoBaseFilter in 'dmoBaseFilter.pas',
+  dspInterfaces in 'dspInterfaces.pas',
+  dmoInterfaces in 'dmoInterfaces.pas',
+  dspParametricEQ in 'dspParametricEQ.pas';
+
+end.
