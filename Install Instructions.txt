@@ -1,0 +1,96 @@
+This File is ment to be an Quick Installation Guide to install all the Packages.
+
+-DSP Components
+ This is a set of DSP Components that can do various DSP Transformations on Audio Data.
+ It also conntains Wrappers for MS DMO Filters. Note that DMOs are limited to 8/16 Bit PCM 
+ and 32 Bit Float with 1 or 2 Channels. To compile it you will need the DirecX9 Components 
+ from DSPack 2.31 or higher. Get it at www.progdigy.com.
+
+-MoveLibrary
+ This Directory contains some MMX/SSE optimized CopyMemory/MoveMemory/Move instructions and 
+ a fast Memory Manager Replacement. (C) FastCode Project.
+
+-Plugin API
+ This Directory contains sample Applications and Renderer that can be used to extend an 
+ Application with a DSP and Visualasation API.
+
+-DSPack Filter
+ This Directory contains the Directshow Filter that can only be used within the DSPack
+ Components. Get the DSPack Components at www.progdigy.com
+ For now (16. May 2004) it is strictly needed that you use the CVS BaseClasses. 
+ They are available here: http://sourceforge.net/projects/dspack
+
+
+IMPORTANT: If you already have an older Version installed, uninstall it first and 
+remove all of the DC-DSP Components related .bpl and .dcp files from your 
+"Delphi7\PRojects\Source\" directory. Otherwise you might Crash Delphi.
+
+
+1)
+As first you need to add a few Directorys to your Searchpath in Delphi. These are:
+
+\dcdspfilter\DSP Components
+\dcdspfilter\DSPack Filter
+\dcdspfilter\MoveLibrary
+\dcdspfilter\Plugin API\API
+
+2)
+Now you must execute the Package Installers. 
+Delphi will raise an exception about that it´s not able to find Resource Files. 
+Ignore them, because Delphi will recreate them anyway.
+
+For Delphi 6 use:
+As first open
+\dcdspfilter\DSP Components\DCDSPComponents_D6.dpk
+hit Compile and Install.
+
+Now open 
+\dcdspfilter\DSPack Filter\DSPackDCDSPFilter_D6.dpk
+hit Compile and Install.
+
+Now open
+\dcdspfilter\Plugin API\API\DCPluginRenderer_D6.dpk
+hit Compile and Install.
+
+For Delphi 7 use:
+As first open
+\dcdspfilter\DSP Components\DCDSPComponents_D7.dpk
+hit Compile and Install.
+
+Now open 
+\dcdspfilter\DSPack Filter\DSPackDCDSPFilter_D7.dpk
+hit Compile and Install.
+
+Now open
+\dcdspfilter\Plugin API\API\DCPluginRenderer_D7.dpk
+hit Compile and Install.
+
+3)
+Now you are ready to compile the Sample Applications.
+
+\dcdspfilter\Samples\DirectShow\
+will contain a Sample how to control the Dc-DSP DirectShow Filter. It´s not ready yet.
+
+\dcdspfilter\Samples\DSPack\ 
+contains the Sample that uses the DSPack Filter Component and the DSP Components. 
+
+\dcdspfilter\Samples\DSPack DVDPlay\
+contains only a Sample how to add the DSPack Filter to a DVD Graph. 
+
+\dcdspfilter\Plugin API\Samples\
+contains Sample Applications and Plugins that shows how to implement DSP and Visual Plugins in any Application.
+
+4)
+some last Informations.
+
+All the DSPack Samples won´t need to have DCDSPFilter.ax registered to your System, while
+all DirectShow Samples need it. 
+The Source of DCDSPFilter.ax is located in 
+\dcdspfilter\DirectShow Filter\Source
+After compiling it is placed in 
+\dcdspfilter\DirectShow Filter\Binary
+To register it run registar.bat. To unregister it run unregister.bat
+
+Important !!!
+It is important to add FastMM4.pas and FastMove.pas as first units to your project's .dpk file !!!
+Otherwise your Application/DLL may crash with certain DSP's where 16byte aligned Memory is needed !!!
